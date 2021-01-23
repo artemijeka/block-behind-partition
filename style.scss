@@ -5,8 +5,10 @@
   // font-family: 'Rubik', sans-serif;
 }
 
-body {
+body,
+main {
   overflow: hidden;
+  height: 100vh;
 }
 
 .block-behind-partition {
@@ -14,7 +16,7 @@ body {
   position: relative;
   // z-index: 1;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   // align-items: center;
