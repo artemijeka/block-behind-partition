@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // font-family: 'Rubik', sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.block-behind-partition {
+  // overflow: hidden;
+  position: relative;
+  // z-index: 1;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  background-color: rgb(45, 236, 255);
+  background-image: linear-gradient(180deg, rgba(45, 236, 255, 0.7) 0%, rgba(46, 241, 221, 0.7) 43%, rgba(47, 255, 98, 0.7) 100%);
+  &__divider {
+    filter: blur(150px);
+    position: absolute;
+    top: 0;
+    background-color: rgba(235, 95, 255, 0.75);
+    width: 100%;
+    height: 250px;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    &-bottom {
+      // content: '';
+      position: absolute;
+      top: 250px;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      background-color: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(7px);
+    }
+  }
+  &__decor {
+    &-1 {
+      filter: blur(135px);
+      position: absolute;
+      display: inline-block;
+      bottom: 0;
+      right: 70px;
+      background-color: #fff000;
+      width: 75%;
+      height: 45%;
+      z-index: 1;
+    }
+    &-2 {
+      filter: blur(135px);
+      position: absolute;
+      display: inline-block;
+      bottom: 0;
+      right: 70px;
+      background-color: #ff0000;
+      width: 30%;
+      height: 20%;
+      z-index: 1;
+    }
+  }
+  &__icon {
+    &-list {
+      display: flex;
+      margin-top: 200px;
+      height: 100px;
+      // top: 250px;
+      // position: absolute;
+      // z-index: 3;
+      // left: 50%;
+      // transform: translate(-50%, -50%);
+      // display: flex;
+    }
+    &-item {
+      margin: 10px;
+      // position: relative;
+      list-style: none;
+    }
+    &-link {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+      font-size: 2em;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 5px 45px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transform: translateY(0);
+      z-index: 2;
+      top: 0;
+      transition: top 400ms, z-index 200ms, transform 400ms;
+      transition-delay: 400ms, 200ms, 0ms;
+      &:hover {
+        transition-delay: 0ms, 200ms, 400ms;
+        top: -50px;
+        transform: translateY(50px);
+        z-index: 3;
+        // transition: top 400ms, z-index 0ms, transform 0ms;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        transform: skewX(45deg) translateX(250%);
+        transition: 0.4s;
+      }
+      &:hover::before {
+        transform: skewX(45deg) translateX(-250%);
+      }
+    }
+  }
+}
